@@ -1,16 +1,19 @@
+const fs  = require('fs')
+const path = require('path')
 
-create_object()
+const fullPath = path.join(__dirname, 'block_file')
 
-function create_object(){
-    var fpath = './block_file'
-    var myFilePath = fpath + "/" + 'Harriirrrrr';
-    var myFile = new File(myFilePath).saveDlg("Export as", "Adobe Illustrator files:*.ai");
-    console.log('BCCCCCCCCCCCCCCBCCCCCCCCCCCBCCCCCCCCC')
-    console.log(fpath)
-    // blocks.forEach((block) => {
-    //     // block_obj =  window.localStorage.setItem(sha256(block), JSON.stringify(block));
-    //     console.log(block)
+read_object()
 
-    // })
+function read_object(){
+    // let fpath = './block_file/'
+    // fs.readdir(fullPath, print(fpath))
+    fs.readdir(fullPath, (error, files) => {
+        // if (error) console.log(error)
+        files.forEach( file => console.log(file))
+    })
+}
 
+function print(word){
+    console.log(word)
 }
